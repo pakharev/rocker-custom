@@ -9,6 +9,13 @@ RUN install -o root -g root -m 644 conda.gpg /usr/share/keyrings/conda-archive-k
 RUN gpg --keyring /usr/share/keyrings/conda-archive-keyring.gpg --no-default-keyring --fingerprint 34161F5BF5EB1D4BFBBB8F0A8AEB4F8B29D82806
 RUN echo "deb [arch=amd64 signed-by=/usr/share/keyrings/conda-archive-keyring.gpg] https://repo.anaconda.com/pkgs/misc/debrepo/conda stable main" > /etc/apt/sources.list.d/conda.list
 RUN apt-get update
+RUN apt-get install -y patch
+RUN apt-get install -y build-essential
+RUN apt-get install -y autoconf
+RUN apt-get install -y automake
+RUN apt-get install -y libffi-dev
+RUN apt-get install -y zlib1g-dev
+RUN apt-get install -y libssl-dev
 RUN apt-get install -y conda
 RUN apt-get install -y libxt-dev
 RUN apt-get install -y libbz2-dev
