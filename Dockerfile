@@ -15,6 +15,7 @@ RUN apt-get install -y libbz2-dev
 RUN apt-get install -y liblzma-dev
 RUN apt-get install -y libglpk40
 RUN apt-get install -y libhdf5-dev
+RUN apt-get install -y jags
 
 RUN echo '.libPaths(c("/user-library", .libPaths()))' >> /usr/local/lib/R/etc/Rprofile.site
 
